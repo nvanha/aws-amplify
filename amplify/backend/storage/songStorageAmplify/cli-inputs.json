@@ -1,0 +1,13 @@
+{
+  "resourceName": "songStorageAmplify",
+  "policyUUID": "8d983c29",
+  "bucketName": "song-storage-amplify",
+  "storageAccess": "auth",
+  "guestAccess": [],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ"
+  ],
+  "triggerFunction": "NONE",
+  "groupAccess": {}
+}
