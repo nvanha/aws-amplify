@@ -1,5 +1,6 @@
 import { AmplifySignOut, withAuthenticator } from "@aws-amplify/ui-react";
 import { IconButton, Paper } from "@material-ui/core";
+import AddIcon from "@material-ui/icons/Add";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import PauseIcon from "@material-ui/icons/Pause";
 import PlayArrowIcon from "@material-ui/icons/PlayArrow";
@@ -7,6 +8,7 @@ import Amplify, { API, graphqlOperation, Storage } from "aws-amplify";
 import { useEffect, useState } from "react";
 import ReactPlayer from "react-player";
 import awsconfig from "./aws-exports";
+import AddSong from "./components/AddSong";
 import { updateSong } from "./graphql/mutations";
 import { listSongs } from "./graphql/queries";
 
@@ -16,6 +18,7 @@ const App = () => {
   const [songs, setSongs] = useState([]);
   const [songPlaying, setSongPlaying] = useState("");
   const [audioURL, setAudioURL] = useState("");
+  const [showAddSong, setShowAddSong] = useState(false);
 
   const fetchSong = async () => {
     try {
@@ -109,6 +112,18 @@ const App = () => {
             )}
           </div>
         ))}
+        {showAddSong ? (
+          <AddSong
+            onUpload={() => {
+              setShowAddSong(false);
+              fetchSong();
+            }}
+          />
+        ) : (
+          <IconButton onClick={() => setShowAddSong(true)}>
+            <AddIcon />
+          </IconButton>
+        )}
       </div>
     </div>
   );
