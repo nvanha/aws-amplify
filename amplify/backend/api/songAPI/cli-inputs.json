@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "serviceConfiguration": {
+    "apiName": "songAPI",
+    "serviceName": "AppSync",
+    "gqlSchemaPath": "/Users/nvanha/Desktop/Github/aws-amplify/amplify/backend/api/songAPI/schema.graphql",
+    "defaultAuthType": {
+      "mode": "API_KEY",
+      "expirationTime": 7
+    }
+  }
+}
