@@ -6,7 +6,7 @@ const App = () => {
     <div className="App">
       <header className="App-header">
         <AmplifySignOut />
-        <h2>STAGING - My App Content</h2>
+        <h2>PROD - My App Content</h2>
       </header>
       <SongList />
     </div>
